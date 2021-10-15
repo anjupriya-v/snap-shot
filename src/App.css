@@ -1,38 +1,294 @@
-.App {
-  text-align: center;
+.displayImage {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgb(206, 203, 203);
+  object-fit: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-link {
+  color: white !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modalText {
+  font-family: serif;
+  font-size: 1.1em;
+}
+.searchField {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+}
+.displayImage:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.selectTagContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+h1 {
+  font-weight: bolder;
+  color: white;
+  text-shadow: 3px 3px 2px black;
+}
+.search-bar {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  height: 50px;
+  width: 400px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+  position: relative;
+  background: #d6d6d6;
+}
+
+.input {
+  background: #d6d6d6;
+  border: none;
+  height: 30px;
+  width: 350px;
+  color: #1b1b1b;
+  font-size: 15px;
+  outline: none;
+}
+.input:focus {
+  background: #d6d6d6;
+}
+.search-bar:focus {
+  background: #d6d6d6;
+}
+.input:not(:placeholder-shown) + .label {
+  font-size: 9px;
+  top: 3px;
+  color: #0e912f;
+}
+
+.input:focus ~ .label {
+  font-size: 9px;
+  top: 3px;
+  color: #4279a3;
+  transition: all 0.5s ease;
+}
+
+.label {
+  color: #4279a3;
+  position: absolute;
+  top: 10px;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.search-btn {
+  background: #55a5f0;
+  border-radius: 20px;
+  height: 50px;
+  min-width: 52px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  justify-content: center;
+  cursor: pointer;
+  right: 0px;
+  position: absolute;
+  transition: all 1s ease;
+}
+
+.highlight {
+  width: 0px;
+  height: 1px;
+  background: #4279a3;
+  position: absolute;
+  bottom: 8px;
+  transition: all 1s ease;
+}
+
+.input:focus ~ .highlight {
+  width: 330px;
+  transition: all 1s ease;
+}
+.modalText {
+  text-indent: 3em;
+}
+.appName {
+  color: white;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px black;
+}
+
+.error {
+  color: white;
+  font-size: 3em;
+}
+.nav-link {
+  text-shadow: 1px 1px 1px black;
+}
+.aboutLink {
+  color: rgb(192, 188, 188) !important;
+}
+.aboutLink:active {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.searchIcon {
+  background-color: transparent;
+  border: none;
+}
+.searchIcon:focus {
+  outline: none;
+}
+.displayImage {
+  width: 100%;
+  height: 230px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 0px) and (max-width: 1440px) {
+  .input:focus ~ .highlight {
+    width: 190px;
   }
-  to {
-    transform: rotate(360deg);
+  .search-bar {
+    width: 240px;
   }
+  .searchField {
+    padding: 0px;
+  }
+  nav {
+    padding: 0px !important;
+  }
+  .input {
+    width: 190px;
+  }
+  .heading {
+    font-size: 1.5em;
+    padding-bottom: 0 !important;
+  }
+  .error {
+    font-size: 1.5em;
+    margin-top: 2em;
+  }
+  .selectTagContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .displayImage {
+    width: 200px;
+    height: 150px;
+  }
+  .imageContainer {
+    margin-top: 1.5em !important;
+  }
+}
+
+@media (min-width: 241px) and (max-width: 1440px) {
+  .heading {
+    font-size: 1.7em;
+  }
+  .search-bar {
+    width: 250px;
+  }
+  .input {
+    width: 200px;
+  }
+  .searchField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .displayImage {
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (min-width: 281px) and (max-width: 1440px) {
+  .input:focus ~ .highlight {
+    width: 220px;
+  }
+  .heading {
+    font-size: 1.9em;
+  }
+  .search-bar {
+    width: 280px;
+  }
+  .input {
+    width: 220px;
+  }
+}
+@media (min-width: 321px) and (max-width: 1440px) {
+  .input:focus ~ .highlight {
+    width: 230px;
+  }
+  .heading {
+    padding-top: 0.5em;
+    font-size: 1.9em;
+  }
+  .search-bar {
+    width: 300px;
+  }
+  .input {
+    width: 240px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 1440px) {
+  .heading {
+    font-size: 2em;
+  }
+}
+@media (min-width: 385px) and (max-width: 1440px) {
+  .displayImage {
+    width: 100%;
+    height: 230px;
+  }
+}
+@media (min-width: 414px) and (max-width: 1440px) {
+  .heading {
+    font-size: 2.3em;
+  }
+  .search-bar {
+    width: 330px;
+  }
+  .input {
+    width: 270px;
+  }
+  .input:focus ~ .highlight {
+    width: 270px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1440px) {
+  .search-bar {
+    width: 370px;
+  }
+  .input {
+    width: 300px;
+  }
+  .input:focus ~ .highlight {
+    width: 300px;
+  }
+}
+@media (min-width: 721px) and (max-width: 1440px) {
+  .heading {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .heading {
+    font-size: 2.8em;
+  }
+  .selectTagContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+}
+.heading {
+  font-size: 2.5em;
 }
